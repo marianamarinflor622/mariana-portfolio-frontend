@@ -1,216 +1,203 @@
-# 🚀 **Portfolio de Mariana Marín**
+# Mariana Marín - Portfolio
 
-> **Full-Stack Developer Portfolio** - Una aplicación web moderna que muestra proyectos, habilidades técnicas y permite contacto directo.
+Portafolio web profesional y accesible desarrollado con React.js y Spring Boot, diseñado para mostrar repositorios de GitHub de manera organizada.
 
-## 📋 **Descripción del Proyecto**
+## 🚀 Características
 
-Este es un portfolio personal desarrollado con tecnologías modernas que incluye:
+- **Frontend**: React.js con componentes funcionales y hooks
+- **Backend**: Java Spring Boot con API REST
+- **Integración**: GitHub API para obtener repositorios automáticamente
+- **Diseño**: Estrictamente blanco y negro, totalmente accesible (WCAG 2.1 AA)
+- **Responsive**: Diseño adaptable para todos los dispositivos
 
-- **Frontend**: Aplicación React con Vite, CSS Modules y diseño responsive
-- **Backend**: API REST con Spring Boot y Java 21
-- **Funcionalidades**: Visualización de repositorios GitHub, formulario de contacto, política de privacidad
-- **Testing**: Tests unitarios (Vitest) y E2E (Playwright)
-- **Accesibilidad**: Panel de preferencias de accesibilidad completo
+## ✨ Funcionalidades
 
-## 🏗️ **Estructura del Proyecto**
+- Página principal con información personal
+- Sección de repositorios ordenados por relevancia/fecha
+- Filtros por tecnología y tipo de proyecto
+- Vista detallada de cada repositorio con descripción, tecnologías y enlaces
+- Sección de contacto con formulario accesible
+- Navegación accesible con teclado y lectores de pantalla
 
-```
-mariana-portfolio/
-├── frontend/                 # Aplicación React
-├── backend/                  # API Spring Boot
-├── tests/                    # Tests E2E con Playwright
-├── docs/                     # Documentación del proyecto
-├── LICENSE                   # Licencia MIT
-└── README.md                 # Este archivo
-```
+## 🎨 Paleta de Colores
 
-## 🛠️ **Tecnologías Utilizadas**
+El proyecto utiliza una paleta de colores elegante inspirada en tonos rosas y morados:
 
-### **Frontend:**
-- **React 18** - Biblioteca de UI
-- **Vite** - Herramienta de build
-- **React Router** - Enrutamiento
-- **CSS Modules** - Estilos encapsulados
-- **Vitest** - Testing unitario
-- **Playwright** - Testing E2E
+- **50**: `#F9F6F8` - Fondo muy claro
+- **100**: `#F4EFF2` - Fondo claro
+- **200**: `#EBDFE6` - Acento en fondos oscuros
+- **300**: `#DCC5D2` - Tono medio claro
+- **400**: `#C6A0B5` - Tono medio
+- **500**: `#B1839C` - Tono medio oscuro
+- **600**: `#A17188` - Tono principal
+- **700**: `#835369` - Acento principal
+- **800**: `#6D4757` - Tono oscuro
+- **900**: `#5D3E4C` - Tono muy oscuro
+- **950**: `#36212A` - Tono más oscuro
 
-### **Backend:**
-- **Java 21** - Lenguaje de programación
-- **Spring Boot 3.x** - Framework
-- **Spring Mail** - Envío de emails
-- **Maven** - Gestión de dependencias
-- **SLF4J + Logback** - Logging estructurado
+## 🛠️ Tecnologías
 
-### **DevOps & Testing:**
-- **Playwright** - Testing E2E
-- **Vitest** - Testing unitario frontend
-- **ESLint** - Linting de código
-- **Git** - Control de versiones
+### Frontend
+- React 18
+- React Router DOM
+- Vite
+- CSS3 con variables personalizadas
+- Accesibilidad WCAG 2.1 AA
 
-## 🚀 **Instalación y Ejecución**
+### Backend
+- Java 21
+- Spring Boot 3.3.4
+- Spring Web
+- Spring Actuator
+- Jackson para JSON
 
-### **Prerrequisitos:**
-- Node.js 18+ 
+## 📋 Prerrequisitos
+
+- Node.js 18+ y npm
 - Java 21+
 - Maven 3.6+
 
-### **1. Clonar el repositorio:**
+## 🚀 Instalación y Ejecución
+
+### 1. Clonar el repositorio
 ```bash
-git clone <repository-url>
+git clone https://github.com/marianamarinflor622/mariana-portfolio.git
 cd mariana-portfolio
 ```
 
-### **2. Configurar variables de entorno:**
-```bash
-# Backend
-cp backend/.env.example backend/.env
-# Editar backend/.env con tus credenciales
+### 2. Configurar el Backend
 
-# Frontend  
-cp frontend/.env.example frontend/.env
-# Editar frontend/.env con la URL del backend
-```
-
-### **3. Instalar dependencias:**
-```bash
-# Instalar dependencias del proyecto
-npm install
-
-# Instalar dependencias del frontend
-cd frontend && npm install
-
-# Instalar dependencias del backend (Maven)
-cd backend && mvn clean install
-```
-
-### **4. Ejecutar la aplicación:**
-
-**Backend (Puerto 8081):**
 ```bash
 cd backend
-source load-env.sh
+```
+
+#### Configurar GitHub API (Opcional)
+Para obtener repositorios privados o aumentar el límite de rate limit:
+
+```bash
+export GITHUB_TOKEN=tu_token_de_github
+export GITHUB_USERNAME=marianamarinflor622
+```
+
+#### Ejecutar el Backend
+```bash
 mvn spring-boot:run
 ```
 
-**Frontend (Puerto 5173):**
+El backend estará disponible en `http://localhost:8081`
+
+### 3. Configurar el Frontend
+
 ```bash
 cd frontend
+npm install
+```
+
+#### Ejecutar el Frontend
+```bash
 npm run dev
 ```
 
-**Tests E2E:**
+El frontend estará disponible en `http://localhost:5173`
+
+## 🔧 Configuración de GitHub API
+
+### Obtener Token de GitHub
+
+1. Ve a GitHub Settings > Developer settings > Personal access tokens > Tokens (classic)
+2. Genera un nuevo token con los siguientes permisos:
+   - `public_repo` (para repositorios públicos)
+   - `repo` (para repositorios privados, si es necesario)
+
+### Configurar Variables de Entorno
+
 ```bash
-npm run test:e2e
+# Backend
+export GITHUB_TOKEN=ghp_tu_token_aqui
+export GITHUB_USERNAME=marianamarinflor622
+
+# Frontend (opcional)
+export VITE_API_BASE=http://localhost:8081/api
 ```
 
-## 📁 **Estructura Detallada**
+## 📁 Estructura del Proyecto
 
-### **Frontend (`/frontend`):**
 ```
-src/
-├── components/          # Componentes reutilizables
-├── pages/              # Páginas de la aplicación
-├── styles/             # Estilos CSS y CSS Modules
-├── config/             # Configuración de la app
-├── test/               # Tests unitarios
-├── App.jsx             # Componente principal
-└── main.jsx            # Punto de entrada
+mariana-portfolio/
+├── backend/                 # API Spring Boot
+│   ├── src/main/java/
+│   │   └── com/mariana/portfolio/
+│   │       ├── PortfolioApplication.java
+│   │       ├── config/WebConfig.java
+│   │       └── github/
+│   │           ├── GitHubClient.java
+│   │           └── GitHubController.java
+│   └── src/main/resources/
+│       └── application.yml
+├── frontend/               # Aplicación React
+│   ├── src/
+│   │   ├── components/
+│   │   ├── routes/
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   └── package.json
+└── README.md
 ```
 
-### **Backend (`/backend`):**
-```
-src/main/java/com/mariana/portfolio/
-├── controller/         # Controladores REST
-├── dto/               # Data Transfer Objects
-├── service/           # Servicios de negocio
-├── config/            # Configuración Spring
-└── PortfolioApplication.java
+## 🌐 API Endpoints
+
+### Repositorios
+- `GET /api/repos` - Obtener todos los repositorios
+  - Query params: `language`, `type`, `sort`, `direction`
+- `GET /api/repos/{name}` - Obtener repositorio específico
+
+### Ejemplos de Uso
+```bash
+# Obtener todos los repositorios
+curl http://localhost:8081/api/repos
+
+# Filtrar por lenguaje JavaScript
+curl "http://localhost:8081/api/repos?language=JavaScript"
+
+# Ordenar por fecha de creación
+curl "http://localhost:8081/api/repos?sort=created&direction=desc"
 ```
 
-## 🧪 **Testing**
+## ♿ Accesibilidad
 
-### **Tests Unitarios Frontend:**
+El proyecto cumple con los estándares WCAG 2.1 AA:
+
+- **Contraste**: Mínimo 4.5:1 entre texto y fondo
+- **Navegación**: Completamente navegable con teclado
+- **ARIA**: Etiquetas ARIA apropiadas en todos los elementos
+- **Imágenes**: Texto alternativo para todas las imágenes
+- **Estructura**: HTML5 semántico con landmarks apropiados
+- **Formularios**: Labels asociados y mensajes de error accesibles
+
+## 🚀 Despliegue
+
+### Backend (Heroku/Railway/DigitalOcean)
+```bash
+# Crear JAR ejecutable
+cd backend
+mvn clean package -DskipTests
+
+# El JAR estará en target/portfolio-0.0.1-SNAPSHOT.jar
+java -jar target/portfolio-0.0.1-SNAPSHOT.jar
+```
+
+### Frontend (Vercel/Netlify)
 ```bash
 cd frontend
-npm run test           # Ejecutar tests
-npm run test:ui        # Interfaz visual
-npm run test:coverage  # Con cobertura
+npm run build
+
+# Los archivos estáticos estarán en dist/
 ```
 
-### **Tests E2E:**
-```bash
-npm run test:e2e       # Ejecutar tests E2E
-npm run test:e2e:ui    # Interfaz visual
-```
+## 🤝 Contribuciones
 
-## 🔧 **Configuración**
-
-### **Variables de Entorno Backend:**
-```env
-SERVER_PORT=8081
-SPRING_PROFILES_ACTIVE=local
-CORS_ORIGINS=http://localhost:5173
-MAIL_HOST=smtp.gmail.com
-MAIL_USERNAME=tu-email@gmail.com
-MAIL_PASSWORD=tu-app-password
-MAIL_RECIPIENT=destinatario@email.com
-GITHUB_USERNAME=tu-usuario
-GITHUB_TOKEN=tu-token
-```
-
-### **Variables de Entorno Frontend:**
-```env
-VITE_API_BASE=http://localhost:8081/api
-VITE_APP_NAME=Portfolio Mariana Marín
-VITE_APP_VERSION=1.0.0
-```
-
-## 🔒 **Seguridad**
-
-### **Medidas Implementadas:**
-- **Rate Limiting**: 5 requests por minuto por IP
-- **Sanitización XSS**: Protección contra scripts maliciosos
-- **Validación robusta**: Frontend y backend con límites de longitud
-- **Cabeceras de seguridad**: CSP, X-Frame-Options, HSTS
-- **Protección anti-spam**: Honeypot + captcha simple
-- **Logging de seguridad**: Monitoreo de intentos maliciosos
-
-### **Configuración de Gmail:**
-1. Habilitar 2FA en tu cuenta Gmail
-2. Generar App Password: [Google Account Settings](https://myaccount.google.com/apppasswords)
-3. Usar el App Password en `MAIL_PASSWORD`
-
-**Ver documentación completa de seguridad en `docs/SECURITY_IMPLEMENTATION.md`**
-
-## 🎨 **Características Destacadas**
-
-### **Accesibilidad:**
-- Panel de preferencias completo
-- Soporte para lectores de pantalla
-- Navegación por teclado
-- Modos de alto contraste
-- Ajustes de tipografía
-
-### **Responsive Design:**
-- Diseño adaptativo
-- Grid system flexible
-- Componentes móvil-first
-
-### **Performance:**
-- CSS Modules para estilos optimizados
-- Lazy loading de componentes
-- Build optimizado con Vite
-
-## 📚 **Documentación**
-
-La documentación completa del proyecto se encuentra en la carpeta `docs/`:
-
-- `STRUCTURE_IMPLEMENTATION.md` - Implementación de estructura
-- `STRUCTURE_OPTIMIZATION.md` - Optimización realizada
-- `CSS_MODULES_COMPLETE.md` - Implementación CSS Modules
-- `CLEANUP_SUMMARY.md` - Resumen de limpieza
-
-## 🤝 **Contribución**
+Las contribuciones son bienvenidas. Por favor:
 
 1. Fork el proyecto
 2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
@@ -218,23 +205,17 @@ La documentación completa del proyecto se encuentra en la carpeta `docs/`:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## 📄 **Licencia**
+## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
-## 👩‍💻 **Autor**
+## 📞 Contacto
 
-**Mariana Marín** - Full-Stack Developer
-- Email: infomarianamarin@gmail.com
+**Mariana Marín**
 - GitHub: [@marianamarinflor622](https://github.com/marianamarinflor622)
-
-## 🙏 **Agradecimientos**
-
-- React Team por la excelente biblioteca
-- Spring Team por el framework robusto
-- Vite Team por la herramienta de build rápida
-- Playwright Team por las herramientas de testing
+- LinkedIn: [Mariana Marín](https://www.linkedin.com/in/mariana-marin-1b6268348/)
+- Email: marianamarinflor622@gmail.com
 
 ---
 
-**¡Gracias por visitar mi portfolio!** 🚀✨
+Desarrollado con ❤️ por Mariana Marín para Hackbarna
