@@ -1,0 +1,107 @@
+/* About Component Styles */
+.aboutHero {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.profileImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profileImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.aboutContent header {
+  margin-bottom: 1rem;
+}
+
+.aboutContent h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.eyebrow {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.aboutContent section {
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.aboutContent p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.aboutContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aboutHero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .profileImage {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .aboutContent h1 {
+    font-size: 2rem;
+  }
+  
+  .aboutContent p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutHero {
+    gap: 1rem;
+  }
+  
+  .profileImage {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .aboutContent h1 {
+    font-size: 1.75rem;
+  }
+}
