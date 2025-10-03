@@ -92,7 +92,13 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         
         // Orígenes permitidos
-        configuration.setAllowedOriginPatterns(List.of("http://localhost:*", "https://*.vercel.app", "https://*.netlify.app"));
+        configuration.setAllowedOriginPatterns(List.of(
+            "http://localhost:*", 
+            "https://*.vercel.app", 
+            "https://*.netlify.app",
+            "https://mariana-portfolio.vercel.app",
+            "https://mariana-marin-portfolio.vercel.app"
+        ));
         
         // Métodos permitidos
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
