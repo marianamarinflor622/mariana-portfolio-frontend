@@ -5,3 +5,8 @@ builder = "nixpacks"
 startCommand = "java -jar target/portfolio-0.0.1-SNAPSHOT.jar"
 healthcheckPath = "/actuator/health"
 healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[networking]
+privateNetworking = false
