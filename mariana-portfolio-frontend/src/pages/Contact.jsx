@@ -5,7 +5,7 @@ export default function Contact() {
       <header className="hero" role="region" aria-label="Contacto">
         <p className="eyebrow">Hablemos</p>
         <h1 id="contact-title" className="hero-title">Contacto</h1>
-        <p className="hero-sub">Conéctate conmigo a través de mis redes sociales.</p>
+        <p className="hero-sub">Conéctate conmigo a través de mis redes sociales</p>
       </header>
 
       <div className="app" style={{ paddingTop: '2rem' }}>
