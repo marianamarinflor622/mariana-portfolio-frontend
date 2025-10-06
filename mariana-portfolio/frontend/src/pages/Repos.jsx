@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8081/api'
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8080/api'
 
 export default function Repos() {
   const [repos, setRepos] = useState([])
@@ -88,8 +88,8 @@ export default function Repos() {
       {!loading && repos.length === 0 && <p>No hay resultados. Ajusta los filtros.</p>}
 
       <ul className="repo-list">
-        {repos.map(repo => (
-          <li key={repo.fullName} className="repo-card">
+        {repos.map((repo, index) => (
+          <li key={repo.fullName || `repo-${index}`} className="repo-card">
             <h2>
               <a 
                 href={repo.html_url} 

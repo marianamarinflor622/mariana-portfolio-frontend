@@ -72,7 +72,7 @@ describe('Contact Component', () => {
       expect(screen.getByText('✅ Mensaje enviado correctamente. Te responderé pronto.')).toBeInTheDocument();
     });
 
-    expect(fetch).toHaveBeenCalledWith('http://localhost:8081/api/contact', {
+    expect(fetch).toHaveBeenCalledWith('http://localhost:8080/api/contact', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

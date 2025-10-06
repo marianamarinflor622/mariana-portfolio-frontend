@@ -22,6 +22,9 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    
+    /* Ignore HTTPS errors */
+    ignoreHTTPSErrors: true,
   },
 
   /* Configure projects for major browsers */
@@ -41,7 +44,7 @@ export default defineConfig({
     },
     {
       command: 'cd backend && source load-env.sh && mvn spring-boot:run -DskipTests',
-      url: 'http://localhost:8081/api/repos',
+      url: 'http://localhost:8080/api/repos',
       reuseExistingServer: !process.env.CI,
     },
   ],
