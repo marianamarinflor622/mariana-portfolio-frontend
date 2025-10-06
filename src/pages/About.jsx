@@ -7,7 +7,7 @@ export default function About() {
       <div className={styles.aboutHero}>
         <div className={styles.profileImageContainer}>
           <img 
-            src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face&auto=format&q=80" 
+            src="/IMG_1112.jpeg" 
             alt="Mariana Marín - Desarrolladora Fullstack" 
             className={styles.profileImage}
           />
