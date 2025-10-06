@@ -6,6 +6,7 @@ export default function Contact() {
         <p className="eyebrow">Hablemos</p>
         <h1 id="contact-title" className="hero-title">Contacto</h1>
         <p className="hero-sub">Conéctate conmigo a través de mis redes sociales</p>
+        <p style={{ color: '#666', fontSize: '0.9rem', marginTop: '1rem' }}>Página actualizada - Sin formulario</p>
       </header>
 
       <div className="app" style={{ paddingTop: '2rem' }}>
