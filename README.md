@@ -1,220 +1,217 @@
-# Mariana Marín - Portfolio
+# Mariana Portfolio - Frontend
 
-Portafolio web profesional y accesible desarrollado con React.js y Spring Boot, diseñado para mostrar repositorios de GitHub de manera organizada.
+Frontend del portfolio de Mariana Marín, desarrollado con React y Vite.
 
-## 🚀 Características
+## 🚀 Tecnologías
 
-- **Frontend**: React.js con componentes funcionales y hooks
-- **Backend**: Java Spring Boot con API REST
-- **Integración**: GitHub API para obtener repositorios automáticamente
-- **Diseño**: Estrictamente blanco y negro, totalmente accesible (WCAG 2.1 AA)
-- **Responsive**: Diseño adaptable para todos los dispositivos
+- **React 19.1.1**
+- **Vite 7.1.7**
+- **React Router DOM 7.9.3**
+- **CSS Modules**
+- **DOMPurify** (Sanitización)
+- **Vitest** (Testing)
+- **Playwright** (E2E Testing)
 
-## ✨ Funcionalidades
+## 📋 Características
 
-- Página principal con información personal
-- Sección de repositorios ordenados por relevancia/fecha
-- Filtros por tecnología y tipo de proyecto
-- Vista detallada de cada repositorio con descripción, tecnologías y enlaces
-- Sección de contacto con formulario accesible
-- Navegación accesible con teclado y lectores de pantalla
+- ✅ **SPA** (Single Page Application) con React Router
+- ✅ **Responsive Design** con CSS Modules
+- ✅ **Accesibilidad** WCAG 2.1 AA
+- ✅ **Formulario de contacto** con validación
+- ✅ **Lista de repositorios** con filtros
+- ✅ **Validación de seguridad** en inputs
+- ✅ **Honeypot y Captcha** anti-bots
+- ✅ **Hot Reload** en desarrollo
 
-## 🎨 Paleta de Colores
+## 🛠️ Instalación y Ejecución
 
-El proyecto utiliza una paleta de colores elegante inspirada en tonos rosas y morados:
+### Prerrequisitos
+- Node.js 18+
+- npm o yarn
 
-- **50**: `#F9F6F8` - Fondo muy claro
-- **100**: `#F4EFF2` - Fondo claro
-- **200**: `#EBDFE6` - Acento en fondos oscuros
-- **300**: `#DCC5D2` - Tono medio claro
-- **400**: `#C6A0B5` - Tono medio
-- **500**: `#B1839C` - Tono medio oscuro
-- **600**: `#A17188` - Tono principal
-- **700**: `#835369` - Acento principal
-- **800**: `#6D4757` - Tono oscuro
-- **900**: `#5D3E4C` - Tono muy oscuro
-- **950**: `#36212A` - Tono más oscuro
-
-## 🛠️ Tecnologías
-
-### Frontend
-- React 18
-- React Router DOM
-- Vite
-- CSS3 con variables personalizadas
-- Accesibilidad WCAG 2.1 AA
-
-### Backend
-- Java 21
-- Spring Boot 3.3.4
-- Spring Web
-- Spring Actuator
-- Jackson para JSON
-
-## 📋 Prerrequisitos
-
-- Node.js 18+ y npm
-- Java 21+
-- Maven 3.6+
-
-## 🚀 Instalación y Ejecución
-
-### 1. Clonar el repositorio
-```bash
-git clone https://github.com/marianamarinflor622/mariana-portfolio.git
-cd mariana-portfolio
+### Configuración
+1. Crear archivo `.env` en la raíz del proyecto:
+```env
+# Configuración para desarrollo local
+VITE_API_BASE=http://localhost:8080/api
+VITE_APP_NAME=Portfolio Mariana Marín
+VITE_APP_VERSION=1.0.0
 ```
 
-### 2. Configurar el Backend
-
+### Instalación
 ```bash
-cd backend
-```
-
-#### Configurar GitHub API (Opcional)
-Para obtener repositorios privados o aumentar el límite de rate limit:
-
-```bash
-export GITHUB_TOKEN=tu_token_de_github
-export GITHUB_USERNAME=marianamarinflor622
-```
-
-#### Ejecutar el Backend
-```bash
-mvn spring-boot:run
-```
-
-El backend estará disponible en `http://localhost:8081`
-
-### 3. Configurar el Frontend
-
-```bash
-cd frontend
+# Instalar dependencias
 npm install
 ```
 
-#### Ejecutar el Frontend
+### Desarrollo
 ```bash
+# Servidor de desarrollo
 npm run dev
+
+# Abrir en navegador
+# http://localhost:5173
 ```
 
-El frontend estará disponible en `http://localhost:5173`
+## 📱 Páginas
 
-## 🔧 Configuración de GitHub API
+### Inicio (`/`)
+- Lista de repositorios de GitHub
+- Filtros por lenguaje y tipo
+- Ordenamiento por fecha/alfabético
 
-### Obtener Token de GitHub
+### Sobre mí (`/about`)
+- Información personal
+- Habilidades técnicas organizadas por categorías
+- Imagen de perfil
 
-1. Ve a GitHub Settings > Developer settings > Personal access tokens > Tokens (classic)
-2. Genera un nuevo token con los siguientes permisos:
-   - `public_repo` (para repositorios públicos)
-   - `repo` (para repositorios privados, si es necesario)
+### Contacto (`/contact`)
+- Formulario de contacto con validación
+- Enlaces a redes sociales
+- Protección anti-bots (honeypot + captcha)
 
-### Configurar Variables de Entorno
+### Privacidad (`/privacy`)
+- Política de privacidad
+- Información sobre el uso de datos
+
+## 🧪 Testing
+
+### Tests Unitarios (Vitest)
+```bash
+# Ejecutar tests
+npm test
+
+# Tests en modo watch
+npm run test:ui
+
+# Tests con cobertura
+npm run test:coverage
+```
+
+### Tests E2E (Playwright)
+```bash
+# Ejecutar tests E2E
+npx playwright test
+
+# Ver reporte
+npx playwright show-report
+```
+
+## 📦 Build para Producción
 
 ```bash
-# Backend
-export GITHUB_TOKEN=ghp_tu_token_aqui
-export GITHUB_USERNAME=marianamarinflor622
+# Build de producción
+npm run build
 
-# Frontend (opcional)
-export VITE_API_BASE=http://localhost:8081/api
+# Preview del build
+npm run preview
+```
+
+## 🎨 Estilos
+
+El proyecto usa **CSS Modules** para estilos encapsulados:
+
+- `App.css` - Estilos globales
+- `index.css` - Reset y variables CSS
+- `About.module.css` - Estilos del componente About
+- `Skills.module.css` - Estilos del componente Skills
+- `Preferences.module.css` - Estilos del componente Preferences
+- `Privacy.module.css` - Estilos de la página de privacidad
+
+## 🔒 Seguridad
+
+- **DOMPurify**: Sanitización de inputs
+- **Validación de seguridad**: Detección de XSS y SQL injection
+- **Honeypot**: Campo oculto para detectar bots
+- **Captcha simple**: Verificación matemática básica
+- **Validación de longitud**: Límites en campos de texto
+
+## 🌐 Configuración de API
+
+El frontend se conecta al backend a través de:
+
+```javascript
+// Configuración en src/config/env.js
+const config = {
+  API_BASE: import.meta.env.VITE_API_BASE || 'http://localhost:8080/api',
+  APP_NAME: import.meta.env.VITE_APP_NAME || 'Portfolio Mariana Marín',
+  APP_VERSION: import.meta.env.VITE_APP_VERSION || '1.0.0'
+}
+```
+
+## 📝 Variables de Entorno
+
+| Variable | Descripción | Default |
+|----------|-------------|---------|
+| `VITE_API_BASE` | URL base del backend | http://localhost:8080/api |
+| `VITE_APP_NAME` | Nombre de la aplicación | Portfolio Mariana Marín |
+| `VITE_APP_VERSION` | Versión de la aplicación | 1.0.0 |
+
+## 🚀 Despliegue
+
+### Vercel (Recomendado)
+```bash
+# Instalar Vercel CLI
+npm i -g vercel
+
+# Desplegar
+vercel
+```
+
+### Netlify
+```bash
+# Build
+npm run build
+
+# Subir carpeta dist/ a Netlify
+```
+
+### GitHub Pages
+```bash
+# Build
+npm run build
+
+# Configurar GitHub Actions para deploy automático
 ```
 
 ## 📁 Estructura del Proyecto
 
 ```
-mariana-portfolio/
-├── backend/                 # API Spring Boot
-│   ├── src/main/java/
-│   │   └── com/mariana/portfolio/
-│   │       ├── PortfolioApplication.java
-│   │       ├── config/WebConfig.java
-│   │       └── github/
-│   │           ├── GitHubClient.java
-│   │           └── GitHubController.java
-│   └── src/main/resources/
-│       └── application.yml
-├── frontend/               # Aplicación React
-│   ├── src/
-│   │   ├── components/
-│   │   ├── routes/
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   └── package.json
-└── README.md
+src/
+├── components/          # Componentes reutilizables
+│   ├── Logo.jsx
+│   └── Preferences.jsx
+├── pages/              # Páginas principales
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── Privacy.jsx
+│   ├── RepoDetail.jsx
+│   ├── Repos.jsx
+│   └── Skills.jsx
+├── styles/             # Estilos CSS Modules
+├── test/               # Tests unitarios
+├── utils/              # Utilidades
+│   └── security.js
+├── config/             # Configuración
+│   └── env.js
+├── App.jsx             # Componente principal
+└── main.jsx            # Punto de entrada
 ```
 
-## 🌐 API Endpoints
+## 🧪 Cobertura de Tests
 
-### Repositorios
-- `GET /api/repos` - Obtener todos los repositorios
-  - Query params: `language`, `type`, `sort`, `direction`
-- `GET /api/repos/{name}` - Obtener repositorio específico
-
-### Ejemplos de Uso
-```bash
-# Obtener todos los repositorios
-curl http://localhost:8081/api/repos
-
-# Filtrar por lenguaje JavaScript
-curl "http://localhost:8081/api/repos?language=JavaScript"
-
-# Ordenar por fecha de creación
-curl "http://localhost:8081/api/repos?sort=created&direction=desc"
-```
-
-## ♿ Accesibilidad
-
-El proyecto cumple con los estándares WCAG 2.1 AA:
-
-- **Contraste**: Mínimo 4.5:1 entre texto y fondo
-- **Navegación**: Completamente navegable con teclado
-- **ARIA**: Etiquetas ARIA apropiadas en todos los elementos
-- **Imágenes**: Texto alternativo para todas las imágenes
-- **Estructura**: HTML5 semántico con landmarks apropiados
-- **Formularios**: Labels asociados y mensajes de error accesibles
-
-## 🚀 Despliegue
-
-### Backend (Heroku/Railway/DigitalOcean)
-```bash
-# Crear JAR ejecutable
-cd backend
-mvn clean package -DskipTests
-
-# El JAR estará en target/portfolio-0.0.1-SNAPSHOT.jar
-java -jar target/portfolio-0.0.1-SNAPSHOT.jar
-```
-
-### Frontend (Vercel/Netlify)
-```bash
-cd frontend
-npm run build
-
-# Los archivos estáticos estarán en dist/
-```
-
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+- **22 tests unitarios** con Vitest
+- **1 test E2E** con Playwright
+- **Cobertura**: Componentes, formularios, navegación
+- **Mocks**: API calls, fetch requests
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
 
-## 📞 Contacto
+## 👩‍💻 Autor
 
 **Mariana Marín**
 - GitHub: [@marianamarinflor622](https://github.com/marianamarinflor622)
 - LinkedIn: [Mariana Marín](https://www.linkedin.com/in/mariana-marin-1b6268348/)
-- Email: marianamarinflor622@gmail.com
-
----
-
+- Email: infomarianamarin@gmail.com

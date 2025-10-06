@@ -1,0 +1,99 @@
+/* Skills Component Styles */
+.skillsSection {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--accent);
+}
+
+.skillsSection h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skillCard {
+  background: var(--color-surface);
+  border: 2px solid var(--accent);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.skillCardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 1rem 0;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skillCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skillCard li {
+  padding: 0.5rem 0;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 0.2s ease;
+}
+
+.skillCard li:last-child {
+  border-bottom: none;
+}
+
+.skillCard li:hover {
+  color: var(--accent);
+}
+
+.skillCard li::before {
+  content: "▸";
+  color: var(--accent);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .skillCard {
+    padding: 1rem;
+  }
+  
+  .skillCard h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skillsSection h2 {
+    font-size: 1.75rem;
+  }
+  
+  .skillCard {
+    padding: 0.75rem;
+  }
+}
