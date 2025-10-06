@@ -1,5 +1,4 @@
 export default function Contact() {
-
   return (
     <section aria-labelledby="contact-title">
       <header className="hero" role="region" aria-label="Contacto">
@@ -68,5 +67,3 @@ export default function Contact() {
     </section>
   )
 }
-
-
