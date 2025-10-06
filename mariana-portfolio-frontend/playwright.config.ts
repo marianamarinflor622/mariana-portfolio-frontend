@@ -38,13 +38,8 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: [
     {
-      command: 'cd frontend && npm run dev',
+      command: 'npm run dev',
       url: 'http://localhost:5173',
-      reuseExistingServer: !process.env.CI,
-    },
-    {
-      command: 'cd backend && source load-env.sh && mvn spring-boot:run -DskipTests',
-      url: 'http://localhost:8080/api/repos',
       reuseExistingServer: !process.env.CI,
     },
   ],

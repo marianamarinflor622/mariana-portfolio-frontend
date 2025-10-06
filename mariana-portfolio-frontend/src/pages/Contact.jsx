@@ -92,6 +92,7 @@ export default function Contact() {
       })
       
       if (response.ok) {
+        await response.json()
         setSubmitStatus('success')
         form.reset()
         setMessageLength(0)
@@ -102,10 +103,10 @@ export default function Contact() {
           captcha: ''
         })
       } else {
+        await response.json().catch(() => ({ error: 'Error desconocido' }))
         setSubmitStatus('error')
       }
     } catch (error) {
-      console.error('Error sending message:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)

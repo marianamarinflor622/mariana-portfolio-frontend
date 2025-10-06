@@ -8,10 +8,10 @@
     <relativePath/>
   </parent>
   <groupId>com.mariana</groupId>
-  <artifactId>portfolio</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>portfolio</name>
-  <description>Mariana Portfolio API</description>
+  <artifactId>mariana-portfolio-backend</artifactId>
+  <version>1.0.0</version>
+  <name>mariana-portfolio-backend</name>
+  <description>Mariana Portfolio Backend API</description>
   <properties>
     <java.version>21</java.version>
   </properties>

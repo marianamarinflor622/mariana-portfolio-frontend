@@ -110,26 +110,33 @@ public class ContactController {
                 request.userAgent() != null ? request.userAgent() : "Unknown"
             );
             
-            // 6. Enviar email
+            // 6. Log del mensaje de contacto (siempre se guarda)
+            logger.info("=== NUEVO MENSAJE DE CONTACTO ===");
+            logger.info("Nombre: {}", sanitizedName);
+            logger.info("Email: {}", sanitizedEmail);
+            logger.info("Mensaje: {}", sanitizedMessage);
+            logger.info("IP: {}", clientIp);
+            logger.info("Timestamp: {}", LocalDateTime.now());
+            logger.info("User Agent: {}", request.userAgent() != null ? request.userAgent() : "Unknown");
+            logger.info("=================================");
+            
+            // 7. Intentar enviar email (opcional)
             boolean sent = emailService.sendContactEmail(contactMessage);
             
             if (sent) {
-                logger.info("Contact message sent successfully from IP: {} - Name: {}, Email: {}", 
-                    clientIp, sanitizedName, sanitizedEmail);
-                
-                // Headers de rate limiting
-                long remainingTokens = rateLimitingService.getAvailableTokens(clientIp);
-                long timeUntilRefill = rateLimitingService.getTimeUntilRefill(clientIp);
-                
-                return ResponseEntity.ok()
-                    .header("X-Rate-Limit-Remaining", String.valueOf(remainingTokens))
-                    .header("X-Rate-Limit-Reset", String.valueOf(timeUntilRefill))
-                    .body(Map.of("message", "Mensaje enviado correctamente"));
+                logger.info("Email enviado exitosamente para: {}", sanitizedEmail);
             } else {
-                logger.error("Failed to send contact message from IP: {}", clientIp);
-                return ResponseEntity.internalServerError()
-                    .body(Map.of("error", "Error al enviar el mensaje"));
+                logger.warn("Email NO enviado para: {} - pero mensaje guardado en logs", sanitizedEmail);
             }
+            
+            // Headers de rate limiting
+            long remainingTokens = rateLimitingService.getAvailableTokens(clientIp);
+            long timeUntilRefill = rateLimitingService.getTimeUntilRefill(clientIp);
+            
+            return ResponseEntity.ok()
+                .header("X-Rate-Limit-Remaining", String.valueOf(remainingTokens))
+                .header("X-Rate-Limit-Reset", String.valueOf(timeUntilRefill))
+                .body(Map.of("message", "Mensaje recibido correctamente"));
             
         } catch (Exception e) {
             logger.error("Unexpected error processing contact form from IP {}: {}", clientIp, e.getMessage(), e);
