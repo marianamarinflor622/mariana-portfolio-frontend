@@ -1,5 +1,6 @@
 import styles from '../styles/About.module.css'
 import Skills from './Skills.jsx'
+import profileImage from '../assets/IMG_1112.jpeg'
 
 export default function About() {
   return (
@@ -7,7 +8,7 @@ export default function About() {
       <div className={styles.aboutHero}>
         <div className={styles.profileImageContainer}>
           <img 
-            src="/IMG_1112.jpeg" 
+            src={profileImage} 
             alt="Mariana Marín - Desarrolladora Fullstack" 
             className={styles.profileImage}
           />
