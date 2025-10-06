@@ -181,6 +181,41 @@ a:focus { outline: var(--focus-outline); outline-offset: 2px; }
 .filters select { appearance: none; border: 1px solid var(--color-border); background: var(--color-surface); color: var(--color-text); padding: .5rem .6rem; border-radius: var(--radius-sm); }
 .filters select:focus-visible { outline: var(--focus-outline); outline-offset: 2px; }
 
+/* Estilos para móvil - filtros más pequeños */
+@media (max-width: 768px) {
+  .filters { 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: .5rem; 
+    padding: .5rem; 
+    margin: .75rem 0;
+  }
+  .filters label { 
+    gap: .2rem; 
+  }
+  .filters label span { 
+    font-size: .85rem; 
+    font-weight: 600;
+  }
+  .filters select { 
+    padding: .4rem .5rem; 
+    font-size: .9rem;
+    min-height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filters { 
+    grid-template-columns: 1fr; 
+    gap: .4rem; 
+    padding: .4rem;
+  }
+  .filters select { 
+    padding: .35rem .45rem; 
+    font-size: .85rem;
+    min-height: 32px;
+  }
+}
+
 .repo-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; padding: 0; list-style: none; }
 .repo-card { border: 1px solid var(--color-border); padding: 1rem; background: var(--color-surface); color: var(--color-text); border-radius: var(--radius-md); box-shadow: 0 1px 0 rgba(0,0,0,.03); cursor: pointer; }
 .repo-card h2 { margin: 0 0 .5rem; font-size: 1.1rem; }
